@@ -19,8 +19,6 @@ G = ox.graph_from_point(center, dist=1000, network_type="drive")
 
 # 2) 投影座標系に変換（メートル単位）
 G = ox.project_graph(G)
-ox.save_graphml(G, filepath="graph_ikuta.graphml")
-
 # 3) 各エッジに距離属性を追加
 G = ox.distance.add_edge_lengths(G)
 
