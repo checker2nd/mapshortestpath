@@ -6,24 +6,6 @@ function RouteSelector({ onRoute }) {
   const [pts, setPts] = useState([]);
   useMapEvents({
     click(e) {
-    //   const next = [...pts, e.latlng];
-    //   setPts(next);
-    //   console.log("おした、"+next);
-    //   if (next.length === 2) {
-    //     axios
-    //       .get(`${process.env.REACT_APP_API_URL}/route`, {
-    //         params: {
-    //           start_lat: next[0].lat,
-    //           start_lng: next[0].lng,
-    //           end_lat: next[1].lat,
-    //           end_lng: next[1].lng,
-    //         },
-    //       })
-    //       .then(res => {
-    //         const line = res.data.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
-    //         onRoute({ line, info: res.data });
-    //       });
-    //   }
       const nextPts = [...pts, e.latlng];
       setPts(nextPts);
       console.log("クリック:", nextPts);
