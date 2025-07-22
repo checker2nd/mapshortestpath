@@ -58,7 +58,6 @@ export default function App() {
     
     return (
       <div style={{ display: 'flex', height: '100vh' }}>
-        {/* 初期表示を専修大学生田キャンパス（35.619264, 139.540682）に */}
         <MapContainer center={[35.619264, 139.540682]} zoom={15} style={{ flex: 1 }}>
            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
            <RouteSelector onRoute={setRouteData} />
@@ -67,22 +66,10 @@ export default function App() {
         <div style={{ width: 300, padding: 16 }}>
           {routeData.info ? (
             <>
-              {/* <p>距離: {(routeData.info.distance / 1000).toFixed(2)} km</p>
-              <p>所要時間: {(routeData.info.duration / 60).toFixed(1)} 分</p>
-              <p><b>距離:</b> {(routeData.info.distance / 1000).toFixed(2)} km</p> */}
-
-            {/* ===== 追加表示 ===== */}
-            {(() => {
-              const distKm = routeData.info.distance / 1000;
-              return (
-                <>
-                  <p><b>距離:</b> {(routeData.info.distance / 1000).toFixed(2)} km</p>
-                  <p><b>車:</b> {(distKm / 40 * 60).toFixed(1)} 分 (40 km/h)</p>
-                  <p><b>自転車:</b> {(distKm / 15 * 60).toFixed(1)} 分 (15 km/h)</p>
-                  <p><b>徒歩:</b> {(distKm / 5 * 60).toFixed(1)} 分 (5 km/h)</p>
-                </>
-              );
-            })()}
+                <p><b>距離:</b> {(routeData.info.distance).toFixed(2)} km</p>
+                <p><b>車:</b> {(routeData.info.car_time).toFixed(1)} 分 (40 km/h)</p>
+                <p><b>自転車:</b> {(routeData.info.bike_time).toFixed(1)} 分 (15 km/h)</p>
+                <p><b>徒歩:</b> {(routeData.info.walk_time).toFixed(1)} 分 (5 km/h)</p>
             </>
             
           ) : (
