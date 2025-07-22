@@ -23,11 +23,11 @@ function RouteSelector({ onRoute }) {
           .then(res => {
             const line = res.data.geometry.coordinates.map(([lng, lat]) => [lat, lng]);
             onRoute({ line, info: res.data });
-            setPts([]);  // ← ★ポイント：2点選択後に初期化！
+            setPts([]); 
           })
           .catch(err => {
             console.error("経路取得エラー:", err);
-            setPts([]);  // エラーでもリセット
+            setPts([]); 
           });
       }
     },

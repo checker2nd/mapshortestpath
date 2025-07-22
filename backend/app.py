@@ -126,7 +126,7 @@ def connectUndirectedEdge(fro, to, length):
 
 
 CENTER = (35.619264, 139.540682)  # 生田駅終点(ここを変えた場合はフロントも変える　wikiに書かれてた大学の座標ではうまくいかなかった)
-LOAD_DIST = 3000                #CENTERから道路を読み込む半径(km)
+LOAD_DIST = 3000                #CENTERから道路を読み込む半径(m)
 
 app = FastAPI()
 app.add_middleware(
